@@ -30,7 +30,8 @@ return {
 
         require("fidget").setup({})
         require("mason").setup()
-        require("mason-lspconfig").setup({
+        require("lspconfig").emmet_language_server.setup({})
+	require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",  -- Keep Lua LSP
             },

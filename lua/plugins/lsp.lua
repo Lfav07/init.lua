@@ -11,8 +11,7 @@ return {
         "hrsh7th/nvim-cmp",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
-        "j-hui/fidget.nvim",
-        "nvim-java/nvim-java",  -- Add nvim-java plugin
+        "j-hui/fidget.nvim",    
     },
 
     config = function()
@@ -34,7 +33,6 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",  -- Keep Lua LSP
-                "jdtls",   -- Add Java LSP (jdtls)
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -55,14 +53,6 @@ return {
                                 }
                             }
                         }
-                    }
-                end,
-
-                ["jdtls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.jdtls.setup {
-                        capabilities = capabilities,
-                        -- Add any jdtls-specific configuration here, like init_options
                     }
                 end,
             }

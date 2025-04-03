@@ -18,11 +18,11 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				sh = {"shfmt"},
-				html = {"prettier"},
-				css = {"prettier"},
-				javascript = {"prettier"},
-				yaml = {"prettier", "yamlfmt"},
+				sh = { "shfmt" },
+				html = { "prettier" },
+				css = { "prettier" },
+				javascript = { "prettier" },
+				yaml = { "prettier", "yamlfmt" },
 			}
 		})
 
@@ -50,6 +50,11 @@ return {
 						}
 					}
 				},
+
+				html = {},
+				cssls = {},
+
+
 				yamlls = {
 					capabilities = vim.tbl_deep_extend("force", capabilities, {
 						textDocument = {

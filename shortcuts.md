@@ -11,6 +11,13 @@
 	
 
 
+## Telescope
+- <leader>pf - 'Telescope find files'
+-  <C-p> - 'Telescope find git files' 
+-  <leader>ps - 'Search files containing provided content'
+
+
+
 ## Harpoon
 ### Adding & Managing Files  
 - `<leader>a` → Add current file to Harpoon list  

@@ -28,6 +28,7 @@ return {
 				typescript = { "prettier" },
 				markdown = { "prettier" },
 				yaml = { "prettier", "yamlfmt" },
+				sql = { "sql-formatter" },
 			},
 		})
 

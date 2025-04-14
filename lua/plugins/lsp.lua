@@ -12,6 +12,8 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
+		"jay-babu/mason-null-ls.nvim",
+"nvimtools/none-ls.nvim",
 	},
 
 	config = function()
@@ -40,6 +42,17 @@ return {
 
 		require("fidget").setup({})
 		require("mason").setup()
+		require("mason-null-ls").setup({
+	ensure_installed = {
+		"prettier",
+		"stylua",
+		"black",
+		"shfmt",
+		"yamlfmt",
+	},
+	automatic_installation = true,
+})
+ -- change from "ts_ls" to the actual mason name
 
 		local opts = {
 			servers = {
@@ -89,7 +102,15 @@ return {
 		}
 
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "yamlls" },
+			ensure_installed = {
+	"lua_ls",
+	"yamlls",
+	"html",
+	"cssls",
+	"pyright",
+	"ts_ls"
+},
+
 			handlers = {
 				function(server_name)
 					if opts.servers[server_name] then

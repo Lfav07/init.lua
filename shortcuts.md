@@ -50,7 +50,22 @@
 - `gh` → Accept right (incoming) change (`diffget //3`)
 
 
+## LSP Shortcuts
 
+These mappings are active only when an LSP server is attached.
+
+| Shortcut    | Action                          |
+|-------------|---------------------------------|
+| `K`         | Show hover documentation        |
+| `gd`        | Go to definition                |
+| `gr`        | Show references                 |
+| `<C-k>`     | Show function signature help    |
+| `<leader>rn`| Rename symbol                   |
+| `<leader>ca`| Code actions                    |
+| `[d`        | Go to previous diagnostic       |
+| `]d`        | Go to next diagnostic           |
+| `<leader>e` | Show diagnostics in float       |
+| `<leader>q` | Open diagnostics in loclist     |
 
 ## CMP (Completion)
 - `<C-p>` → Previous item

@@ -9,6 +9,15 @@ vim.keymap.set("n", "<leader>f", function()
 	require("conform").format({ async = true })
 end, { noremap = true, silent = true })
 
+vim.keymap.set("n", "<leader>cd", ":lcd %:p:h<CR>:pwd<CR>", {
+	desc = "Set local cwd to current file's directory",
+	noremap = true,
+	silent = true,
+})
+
+vim.keymap.set({ "n", "v" }, "<leader>gp", [["+p]], { desc = "Paste after from clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>gP", [["+P]], { desc = "Paste before from clipboard" })
+
 -- Move selected line(s) down/up in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -59,19 +68,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Replace word under cursor throughout the file (interactive)
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
-
--- Insert Go error handling: if err != nil { return err }
-vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
-
--- Insert Go assertion: assert.NoError(err, "")
-vim.keymap.set("n", "<leader>ea", 'oassert.NoError(err, "")<Esc>F";a')
-
--- Insert Go fatal log: log.Fatalf(...)
-vim.keymap.set("n", "<leader>ef", 'oif err != nil {<CR>}<Esc>Olog.Fatalf("error: %s\\n", err.Error())<Esc>jj')
-
--- Insert Go structured logger error
-vim.keymap.set("n", "<leader>el", 'oif err != nil {<CR>}<Esc>O.logger.Error("error", "error", err)<Esc>F.;i')
 
 -- Source (reload) current file
 vim.keymap.set("n", "<leader><leader>", function()

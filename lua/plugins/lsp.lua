@@ -101,7 +101,7 @@ return {
 				},
 			},
 		}
-
+vim.lsp.handlers["textDocument/didChangeWatchedFiles"] = vim.lsp.handlers.did_change_watched_files
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 	"lua_ls",
